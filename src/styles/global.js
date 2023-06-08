@@ -17,13 +17,17 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100}
   }
 
-  body, input, button {
+  body, input, button, textarea {
     font-size: 1.6rem;
     outline: none;
     font-family: 'Roboto', sans-serif;
 
     -webkit-font-smoothing: antialiased;
   }
+
+  input:invalid {
+  border: 2px solid red;
+  } 
 
   a {
     text-decoration: none;

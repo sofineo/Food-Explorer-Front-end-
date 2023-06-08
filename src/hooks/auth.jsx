@@ -18,7 +18,6 @@ function AuthProvider({ children }) {
       api.defaults.headers.common['Authorization'] = `Bear ${token}`
   
       setData({ user, token })
-      console.dir(user)
     } catch (error) {
       if(error.response) {
         alert(error.response.data.message)
@@ -32,9 +31,18 @@ function AuthProvider({ children }) {
   async function signOut() {
     localStorage.removeItem('@foodexplorer:user')
     localStorage.removeItem('@foodexplorer:token')
+
+    setData({})
   }
 
-  async function updateProfile() {}
+  async function fileAvatar(avatar) {
+    const fileUploadForm = new FormData()
+    fileUploadForm.append('avatar', avatar)
+
+    const filename = await api.patch('/dishes/avatar', fileUploadForm)
+    
+    return filename
+  }
 
   useEffect(() => {
     const user = localStorage.getItem('@foodexplorer:user')
@@ -54,8 +62,9 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={{
         signIn,
         signOut,
-        updateProfile,
-        user: data.user
+        fileAvatar,
+        user: data.user,
+        token: data.token
       }}>
       { children }
     </AuthContext.Provider>  

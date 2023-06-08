@@ -9,7 +9,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
-.logan {
+.logo {
   display: flex;
   gap: 10.74px;
   align-items: center;
@@ -104,7 +104,7 @@ justify-content: center;
   max-width: 1368px;
   margin: 0 auto;
 
-  .logan span {
+  .logo span {
     font-family: ${({ theme }) => theme.ROBOTO.ROBOTO_GIANT_BOLD.FONT};
     font-weight: ${({ theme }) => theme.ROBOTO.ROBOTO_GIANT_BOLD.WEIGHT};
     font-size: ${({ theme }) => theme.ROBOTO.ROBOTO_GIANT_BOLD.SIZE};
