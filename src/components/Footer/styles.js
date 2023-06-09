@@ -10,6 +10,9 @@ align-items: center;
 justify-content: space-around;
 padding: 24px 20px;
 
+grid-area: 'footer';
+
+
 .logo {
   color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_700};
   display: flex;

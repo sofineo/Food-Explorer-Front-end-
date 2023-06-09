@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom"
 import { useAuth } from "../hooks/auth"
 
 
-export const ProtectedRoutes = () =>{
+export function ProtectedRoutes() {
     const { user } = useAuth()
 
     const navigate = useNavigate()

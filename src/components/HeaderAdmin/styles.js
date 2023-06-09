@@ -9,6 +9,8 @@ justify-content: center;
 align-items: center;
 background: ${({ theme }) => theme.COLORS_DARK.DARK_700};
 
+grid-area: 'header';
+
 .content-header {
   max-width: 1122px;
   width: 100%;
@@ -19,6 +21,7 @@ background: ${({ theme }) => theme.COLORS_DARK.DARK_700};
   justify-content: center;
   gap: calc(0px + 2vw);
 }
+
 .menu {
   position: absolute;
   left: 30px;

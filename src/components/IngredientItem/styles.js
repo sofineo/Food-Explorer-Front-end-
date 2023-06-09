@@ -17,7 +17,6 @@ export const Container = styled.div`
   background: ${({ theme, isNew }) => isNew ? 'none' : theme.COLORS_LIGHT.LIGHT_600};
   border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS_LIGHT.LIGHT_600}}` : 'none'};
   
-
   input {
     max-width: fit-content;
     background: transparent;

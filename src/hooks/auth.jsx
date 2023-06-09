@@ -35,14 +35,6 @@ function AuthProvider({ children }) {
     setData({})
   }
 
-  async function fileAvatar(avatar) {
-    const fileUploadForm = new FormData()
-    fileUploadForm.append('avatar', avatar)
-
-    const filename = await api.patch('/dishes/avatar', fileUploadForm)
-    
-    return filename
-  }
 
   useEffect(() => {
     const user = localStorage.getItem('@foodexplorer:user')
@@ -62,7 +54,6 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={{
         signIn,
         signOut,
-        fileAvatar,
         user: data.user,
         token: data.token
       }}>

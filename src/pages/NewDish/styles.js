@@ -3,16 +3,13 @@ import theme from '../../styles/theme'
 
 export const Container = styled.div`
 width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
 
 .content {
   width: 100%;
   max-width: 700px;
   padding: 10px 32px 53px;
+
+  margin: 0 auto;
 }
 
 .form {
@@ -130,6 +127,21 @@ justify-content: center;
 
 @media (min-width: 850px) {
   height: 100vh;
+  display: grid;
+
+  grid-template-rows: 96px auto 77px;
+  grid-template-areas: 'header'
+  'page'
+  'footer';
+
+
+  .page {
+    grid-area: 'page';
+    width: 100%;
+    max-width: 1122px;
+    justify-self: center;
+  }
+
 
   .content {
     max-width: 1122px;

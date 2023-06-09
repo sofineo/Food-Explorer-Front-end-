@@ -85,7 +85,10 @@ export function NewDish() {
     }
 
     if(avatar) {
-      const response = await fileAvatar(avatar)
+      const fileUploadForm = new FormData()
+      fileUploadForm.append('avatar', avatar)
+
+      const response = await api.patch('/dishes/avatar', fileUploadForm)
       const filename = response.data
 
       await api.post('/dishes', {
@@ -120,6 +123,7 @@ export function NewDish() {
   return (
     <Container>
       <HeaderAdmin />
+      <div className="page">
       <div className="content">
         <TextButton
           icon={FiChevronLeft}
@@ -244,6 +248,7 @@ export function NewDish() {
             Criar prato
           </button>
         </div>
+      </div>
       </div>
       <Footer/>
     </Container>
