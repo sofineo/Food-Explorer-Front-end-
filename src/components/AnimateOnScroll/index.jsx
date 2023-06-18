@@ -17,10 +17,7 @@ export function AnimateOnScroll({ children, sendScrollEffectValue,...rest }) {
     const divElement = divRef.current
 
     if (divElement.scrollWidth > divElement.clientWidth) {
-      console.log('Overflow detected!')
       setShowScrollEffect(true)
-      // sendScrollEffectValue(showScrollEffect)
-      console.log(divElement.className)
     }
   }, [showScrollEffect])
 

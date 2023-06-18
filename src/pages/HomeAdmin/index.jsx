@@ -20,14 +20,8 @@ export function HomeAdmin() {
    const query = queryParams.get('q');
    const [dishes, setDishes] = useState([])
    const [search, setSearch] = useState('')
-  //  const [showScrollE, setDivDishesSectionWidth] = useState('')
-
 
    const navigate = useNavigate()
-
-//    function handleScrollEffect(value) {
-//     setDivDishesSectionWidth(value)
-//  }
 
   function handleSearch(searchValue) {
     setSearch(searchValue)
@@ -77,9 +71,7 @@ export function HomeAdmin() {
             <div>
             <h2> Entradas </h2>
             <div className='box-dishes'>
-            <AnimateOnScroll 
-            // sendScrollEffectValue={handleScrollEffect}
-            >
+            <AnimateOnScroll>
             {(dishes.filter(dish => dish.category == 'Entrada')).map( (dish) => (
               <DishAdmin 
                 key={String(dish.id)}
@@ -101,9 +93,7 @@ export function HomeAdmin() {
             <div>
             <h2> Prato principal </h2>
             <div className='box-dishes'>
-            <AnimateOnScroll 
-            // sendScrollEffectValue={handleScrollEffect}
-            >
+            <AnimateOnScroll>
             {(dishes.filter(dish => dish.category == 'Prato principal')).map( (dish) => (
               <DishAdmin 
                 key={String(dish.id)}
@@ -124,9 +114,7 @@ export function HomeAdmin() {
              <div>
              <h2> Sobremesas </h2>
              <div className='box-dishes'>
-            <AnimateOnScroll 
-              // sendScrollEffectValue={handleScrollEffect}
-            >
+            <AnimateOnScroll>
             {(dishes.filter(dish => dish.category == 'Sobremesa')).map( (dish) => (
               <DishAdmin 
                 key={String(dish.id)}
@@ -147,9 +135,7 @@ export function HomeAdmin() {
               <div>
                <h2> Bebidas </h2>
                <div className='box-dishes'>
-            <AnimateOnScroll
-            // sendScrollEffectValue={handleScrollEffect}
-            >
+            <AnimateOnScroll>
             {(dishes.filter(dish => dish.category == 'Bebida')).map( (dish) => (
               <DishAdmin 
                 key={String(dish.id)}
