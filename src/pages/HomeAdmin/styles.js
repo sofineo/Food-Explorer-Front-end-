@@ -127,7 +127,25 @@ overflow-x: hidden;
 
     overflow-y: scroll;
     overflow-x: hidden;
-  }
+
+    ::-webkit-scrollbar {
+      width: .8rem;
+      height: 9.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    width: .8rem;
+    height: 9.6rem;
+    background: ${({ theme }) => theme.COLORS_DARK.DARK_100};
+    border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    border-radius: 1rem;
+    }
+    }
+  
 
   .image-text {
       width: calc(100% - 70px);
@@ -188,13 +206,6 @@ overflow-x: hidden;
     font-size: ${({ theme }) => theme.POPPINS.POPPINS_400_MEDIUM.SIZE};
     line-height: ${({ theme }) => theme.POPPINS.POPPINS_400_MEDIUM.LINE_HEIGHT};
   } 
-
-  /* .horizontal-scroll::before {
-    height: 448px;
-  }
-  .horizontal-scroll::after {
-    height: 448px;
-  } */
 
 }
 

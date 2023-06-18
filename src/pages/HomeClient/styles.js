@@ -128,6 +128,22 @@ overflow-x: hidden;
     overflow-y: scroll;
     overflow-x: hidden;
 
+    ::-webkit-scrollbar {
+      width: .8rem;
+      height: 9.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    width: .8rem;
+    height: 9.6rem;
+    background: ${({ theme }) => theme.COLORS_DARK.DARK_100};
+    border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    border-radius: 1rem;
+    }
   }
 
   .image-text {
