@@ -99,12 +99,12 @@ export function NewDish() {
       return alert('Digite a descrição')
     }
     if(!avatar) {
-      const confirm = window.confirm('Você não enviou uma foto para o prato, tem certeza que deseja criar mesmo assim? Você poderá editar posteriormente')
+      // const confirm = window.confirm('Você não enviou uma foto para o prato, tem certeza que deseja criar mesmo assim? Você poderá editar posteriormente')
 
-      if (!confirm) return
+      // if (!confirm) return
+      return alert('Selecione uma imagem para o prato.')
     }
 
- 
     
     if(avatar) {
       const fileUploadForm = new FormData()
