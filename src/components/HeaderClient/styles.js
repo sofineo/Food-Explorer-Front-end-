@@ -61,15 +61,47 @@ grid-area: 'header';
     line-height: 25px;
     font-weight: bold;
     color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
-
-    span {
-      color: ${({ theme }) => theme.COLORS_TINTS.CAKE_200};
-      font-family: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALLEST_REGULAR.FONT};
-      font-weight: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALLEST_REGULAR.WEIGHT};
-      font-size: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALLEST_REGULAR.SIZE};
-      line-height: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALLEST_REGULAR.LINE_HEIGHT};
-    }
   }
+}
+
+.orders {
+  position: absolute;
+  right: 30px;
+  background: none;
+  border: none;
+  height: fit-content;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
+
+  font-family: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.FONT};
+  font-weight: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.WEIGHT};
+  font-size: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.SIZE};
+  line-height: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.LINE_HEIGHT};
+
+  .p-desktop {
+    display: none;
+  }
+
+  .p-mobile {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.COLORS_TINTS.TOMATO_100};
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+  }
+
+  :hover {
+      color: ${({ theme }) => theme.COLORS_TINTS.CAKE_100};
+    }
 }
 
 .search-bar {
@@ -121,21 +153,29 @@ grid-area: 'header';
     display: flex;
   }
 
-  .new-dish {
-    display: block;
+  .orders {
+    position: unset;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     min-width: 130px;
     width: clamp(10px, 20px + 15vw ,216px);
     height: 48px;
     border: none;
     border-radius: 8px;
     background: ${({ theme }) => theme.COLORS_TINTS.TOMATO_100};
-    color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
 
-    font-family: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.FONT};
-    font-weight: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.WEIGHT};
-    font-size: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.SIZE};
-    line-height: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.LINE_HEIGHT};
+    :hover {
+      color: unset;
+    }
 
+    .p-desktop {
+      display: unset;
+    }
+
+    .p-mobile {
+      display: none;
+    }
   }
 
   .sign-out {

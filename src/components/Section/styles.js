@@ -6,7 +6,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    position: relative;
+
 
     label {
       font-family: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALL_REGULAR.FONT};
@@ -21,7 +21,8 @@ export const Container = styled.div`
         outline: #FFFFFF 0.5px solid;
       }
 
-    .items {
+    .ingredients {
+
       min-height: 48px;
       width: 100%;
       background: ${({ theme }) => theme.COLORS_DARK.DARK_800};
@@ -32,6 +33,7 @@ export const Container = styled.div`
       align-items: center;
       gap: 8px;
 
+
       padding: 4px 14px;
 
       color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
@@ -41,4 +43,7 @@ export const Container = styled.div`
       font-size: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.SIZE};
       line-height: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.LINE_HEIGHT};
     } 
+
+    @media (min-width: 850px) {
+    }
 `

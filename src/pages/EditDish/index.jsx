@@ -8,11 +8,11 @@ import { IngredientItem } from '../../components/IngredientItem'
 import { Section } from '../../components/Section'
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
-import { useAuth } from '../../hooks/auth'
 
 export function EditDish() {
   const params = useParams()
   const [data, setData] = useState({})
+  const [search, setSearch] = useState('')
 
   const [avatar, setAvatar] = useState(null)
   const [name, setName] = useState('')
@@ -25,6 +25,10 @@ export function EditDish() {
 
   const navigate = useNavigate()
 
+  function handleSearch(searchValue) {
+    setSearch(searchValue)
+  }
+
   function handleButtonBack() {
     navigate(-1)
   }
@@ -35,6 +39,9 @@ export function EditDish() {
   }
 
   function handleAddIngredient() {
+    if(!newIngredient) {
+      return
+    }
     setIngredients(prevState => [...prevState, newIngredient])
     setNewIngredient('')
   }
@@ -90,6 +97,12 @@ export function EditDish() {
       return alert('Digite a descrição')
     }
 
+    if(price.endsWith(',', (Number(price.length)-1))) {
+      setPrice(price.padEnd((Number(price.length)+1),'0'))
+      console.log(price)
+      return
+    }
+
     if(avatar) {
       const fileUploadForm = new FormData()
       fileUploadForm.append('avatar', avatar)
@@ -132,7 +145,7 @@ export function EditDish() {
 
   return (
     <Container>
-      <HeaderAdmin />
+      <HeaderAdmin sendSearchValue={handleSearch}/>
       <div className="page">
         <div className="content">
           <TextButton
@@ -141,7 +154,7 @@ export function EditDish() {
             onClick={handleButtonBack}
           />
           <div className="form">
-            <legend>Novo prato</legend>
+            <legend>Editar prato</legend>
 
             <div className="column3">
               <Avatar

@@ -11,9 +11,15 @@ export function DetailsAdmin() {
   const params = useParams()
   const [data, setData] = useState({})
   const [ingredients, setIngredients] = useState([])
+  const [search, setSearch] = useState('')
+
   const avatarUrl = data.avatar ? `${api.defaults.baseURL}/files/${data.avatar}` : 'none'
 
   const navigate = useNavigate()
+
+  function handleSearch(searchValue) {
+    setSearch(searchValue)
+  }
 
   function handleButtonBack() {
     navigate(-1)
@@ -35,7 +41,7 @@ export function DetailsAdmin() {
 
   return (
     <Container>
-      <HeaderAdmin />
+      <HeaderAdmin sendSearchValue={handleSearch}/>
         <div className="page">
           <TextButton
               icon={FiChevronLeft}
@@ -51,7 +57,8 @@ export function DetailsAdmin() {
             <h1>{data.name}</h1>
             <p>{data.description}</p>
             <div className="ingredients">
-              {ingredients.map((ingredient) => (<span>{ingredient}</span>))}
+              {ingredients.map((ingredient, index) => (<span key={String(index)}>{
+              ingredient}</span>))}
             </div>
             <div className='button'>
               <button

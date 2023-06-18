@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import theme from '../../styles/theme'
 
 export const Container = styled.div`
-width: clamp(220px, 260px + 20vw, 581px);
+width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
+
+margin-bottom: 36px;
 
 border-radius: 5px;
 gap: 14px;
@@ -24,4 +26,12 @@ input {
   line-height: ${({ theme }) => theme.ROBOTO.ROBOTO_SMALL_REGULAR.LINE_HEIGHT};
   color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};;
 }
+
+@media (min-width: 850px) {
+  width: clamp(220px, 260px + 20vw, 581px);
+
+  margin-bottom: unset;
+}
+
+
 `

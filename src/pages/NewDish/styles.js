@@ -95,6 +95,8 @@ width: 100%;
       pointer-events: none;
     }
 
+ 
+
     textarea {
       height: 172px;
       resize: none;

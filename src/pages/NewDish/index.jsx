@@ -19,6 +19,11 @@ export function NewDish() {
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
   const [sizeNewIngredient, setSizeNewIngredient] = useState('')
+  const [search, setSearch] = useState('')
+
+ function handleSearch(searchValue) {
+   setSearch(searchValue)
+ }
 
   const navigate = useNavigate()
   const { fileAvatar } = useAuth()
@@ -33,6 +38,9 @@ export function NewDish() {
   }
 
   function handleAddIngredient() {
+    if(!newIngredient) {
+      return
+    }
     setIngredients(prevState => [...prevState, newIngredient])
     setNewIngredient('')
   }
@@ -59,6 +67,18 @@ export function NewDish() {
     return true
   }
   
+  function handlePrice() {
+    if(price.endsWith(',', Number(price.length)-1)) {
+      setPrice(price.padEnd(Number(price.length)+1,'0'))
+    }
+    if(price.endsWith(',', price.length)) {
+      setPrice(price.padEnd(Number(price.length)+2,'00'))
+    }
+    if(!price.includes(',')) {
+      setPrice(price.padEnd(Number(price.length)+3,',00'))
+    }
+  }
+
   async function handleNewDish() {
     if(!name) {
       return alert('Digite o nome do prato')
@@ -84,6 +104,8 @@ export function NewDish() {
       if (!confirm) return
     }
 
+ 
+    
     if(avatar) {
       const fileUploadForm = new FormData()
       fileUploadForm.append('avatar', avatar)
@@ -122,7 +144,7 @@ export function NewDish() {
 
   return (
     <Container>
-      <HeaderAdmin />
+      <HeaderAdmin  sendSearchValue={handleSearch}/>
       <div className="page">
       <div className="content">
         <TextButton
@@ -243,7 +265,10 @@ export function NewDish() {
           <button
             className='save-button'
             type='button'
-            onClick={handleNewDish}
+            onClick={() => {
+              handlePrice()
+              handleNewDish()
+            }}
           >
             Criar prato
           </button>

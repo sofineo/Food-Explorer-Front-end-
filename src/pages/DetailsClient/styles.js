@@ -66,25 +66,47 @@ export const Container = styled.div`
     }
   }
 
-  .button {
+  .bts-wrapper {
     width: 100%;
-    padding: 0 20px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
   }
 
-  button {
-    width: 100%;
-    max-width: 316px;
-    height: 48px;
+  .bts-add-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 
-    margin-bottom: 40px;
+  .quantities {
+    margin: unset;
+  }
 
-    background: ${({ theme }) => theme.COLORS_TINTS.TOMATO_100};
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
+    }
+  }
 
+  .add-to-order {
+    width: 162px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     border: none;
     border-radius: 5px;
+    background: ${({ theme }) => theme.COLORS_TINTS.TOMATO_100};
 
     font-family: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.FONT};
     font-weight: ${({ theme }) => theme.POPPINS.POPPINS_100_MEDIUM.WEIGHT};
@@ -93,6 +115,10 @@ export const Container = styled.div`
 
     color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
 
+    svg {
+        width: 17.58px;
+        height: 14.87px;
+    }
   }
 }
 
@@ -165,15 +191,32 @@ grid-template-areas: 'header'
     .ingredients span {
       height: 32px;
     }
-    .button {
-      justify-content: left;
-      padding: 0;
-    }
+
     button {
       margin: 0;
       width: 131px;
     }
+
+    .bts-wrapper {
+      width: 294px;
+      display: flex;
+      gap: 16px;
+      justify-content: flex-start;
+
+      .bts-add-remove {
+        width: 99px;
+      }
+  
+      .add-to-order{
+        width: 162px;
+
+        svg {
+          display: none;
+        }
+      }
+    }
   }
+
 }
 
 `

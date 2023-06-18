@@ -1,21 +1,25 @@
 import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 import { useAuth } from "../hooks/auth"
+import jwt_decode from 'jwt-decode'
+
 
 
 export function ProtectedRoutes() {
-    const { user } = useAuth()
+    const { token } = useAuth()
+    let decoded = jwt_decode(token)
+    console.log(decoded)
 
     const navigate = useNavigate()
 
     useEffect(() =>{
-        if(!user){
+        if(!token){
           navigate('/')
         }
     })
     return(
         <>
-            { user ? <Outlet/> : null }
+            { token ? <Outlet/> : null }
         </>
     )
 }

@@ -1,10 +1,12 @@
 import { Container } from './styles'
 
+
 export function Section({ label, children, ...rest }) {
   return (
-    <Container>
+    <Container 
+    {...rest}>
       <label htmlFor={label}>{label}</label>
-      <div className="items">
+      <div className="items" {...rest}>
         {children}
       </div>
     </Container>

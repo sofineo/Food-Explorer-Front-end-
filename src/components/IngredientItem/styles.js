@@ -9,7 +9,7 @@ export const Container = styled.div`
   border-radius: 8px;
   display: flex;
   align-items: center;
-
+  
   padding: 10px 16px;
   
   gap: ${({ isNew }) => isNew ? '0px' : '3px' };
