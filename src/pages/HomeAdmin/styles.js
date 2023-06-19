@@ -121,7 +121,7 @@ overflow-x: hidden;
   
   .box-dishes {
     position: relative;
-    padding: 0 24px;
+    padding: 0 1px 0 24px;
     background: none;
   }
 
