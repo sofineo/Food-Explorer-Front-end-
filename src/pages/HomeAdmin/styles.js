@@ -89,6 +89,7 @@ overflow-x: hidden;
     height: calc(fit-content * 1.05);
     width: 100%;
     overflow-x: scroll;
+    overflox-y: none;
     overscroll-behavior-inline: contain;
 //     ::-webkit-scrollbar {
 //       display: none;
