@@ -24,9 +24,13 @@ export const Container = styled.div`
     height: inherit;
     background: rgb(0, 2, 4);
     background: ${({ right }) => right ? 'linear-gradient(270deg, rgba(0, 2, 4, 1) 0%, rgba(0, 2, 4, 0%) 80%)' : 'linear-gradient(90deg, rgba(0, 2, 4, 1) 0%, rgba(0, 2, 4, 0%) 80%)'};
-  filter: opacity(0.9);
+    filter: opacity(0.9);
     color: white;
     border: none;
+    
+    svg {
+    display: none;
+    }
   }
 
   .hide {
