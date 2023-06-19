@@ -90,8 +90,25 @@ overflow-x: hidden;
     width: 100%;
     overflow-x: scroll;
     overscroll-behavior-inline: contain;
+//     ::-webkit-scrollbar {
+//       display: none;
+//     }
+
     ::-webkit-scrollbar {
-      display: none;
+      width: .8rem;
+      height: 9.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    width: .8rem;
+    height: 9.6rem;
+    background: ${({ theme }) => theme.COLORS_DARK.DARK_300};
+    border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    border-radius: 1rem;
     }
   }
 
