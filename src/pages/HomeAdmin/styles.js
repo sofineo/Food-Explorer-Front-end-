@@ -95,14 +95,12 @@ overflow-x: hidden;
 //     }
 
     ::-webkit-scrollbar {
-      width: .8rem;
-      height: 9.6rem;
+      height: .8rem;
     }
 
     ::-webkit-scrollbar-thumb {
-    width: .8rem;
-    height: 9.6rem;
-    background: ${({ theme }) => theme.COLORS_DARK.DARK_300};
+    height: .8rem;
+    background: ${({ theme }) => theme.COLORS_DARK.DARK_900};
     border-radius: 1rem;
     }
 
@@ -153,7 +151,7 @@ overflow-x: hidden;
     ::-webkit-scrollbar-thumb {
     width: .8rem;
     height: 9.6rem;
-    background: ${({ theme }) => theme.COLORS_DARK.DARK_100};
+    background: ${({ theme }) => theme.COLORS_DARK.DARK_900};
     border-radius: 1rem;
     }
 
