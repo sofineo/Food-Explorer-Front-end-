@@ -66,34 +66,12 @@ export function HomeClient({ newOrderPlaced }) {
             </div>
           </div>
           <div className="categories">
-            { dishes.filter((dish) => (dish.category == 'Entrada')).length > 0 && (
+          { dishes.filter((dish) => (dish.category == 'Refeição')).length > 0 && (
             <div>
-            <h2> Entradas </h2>
+            <h2> Refeições </h2>
             <div className='box-dishes'>
             <AnimateOnScroll>
-            {(dishes.filter(dish => dish.category == 'Entrada')).map( (dish) => (
-              <DishClient 
-                key={String(dish.id)}
-                image={`${api.defaults.baseURL}/files/${dish.avatar}`}
-                title={dish.name} 
-                dishDescription={dish.description}
-                priceTag={dish.price}
-                icon={FiChevronRight}
-                onClickDish={() => handleClickOnDish(dish.id)}
-                onClickButtonEdit={() => handleClickOnButtonFavorite(dish.id)}
-                newOrderPlaced={order}
-              />
-              ))
-            }
-            </AnimateOnScroll>
-            </div>
-            </div>)}
-            { dishes.filter((dish) => (dish.category == 'Prato principal')).length > 0 && (
-            <div>
-            <h2> Prato principal </h2>
-            <div className='box-dishes'>
-            <AnimateOnScroll>
-            {(dishes.filter(dish => dish.category == 'Prato principal')).map( (dish) => (
+            {(dishes.filter(dish => dish.category == 'Refeição')).map( (dish) => (
               <DishClient 
                 key={String(dish.id)}
                 image={`${api.defaults.baseURL}/files/${dish.avatar}`}
@@ -103,8 +81,8 @@ export function HomeClient({ newOrderPlaced }) {
                 icon={FiChevronRight}
                 onClickDish={() => handleClickOnDish(dish.id)}
                 onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
-                newOrderPlaced={order}
               />
+              
               ))
             }
             </AnimateOnScroll>

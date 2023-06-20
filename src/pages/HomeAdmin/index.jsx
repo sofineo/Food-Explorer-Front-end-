@@ -67,12 +67,12 @@ export function HomeAdmin() {
             </div>
           </div>
           <div className="categories">
-            { dishes.filter((dish) => (dish.category == 'Entrada')).length > 0 && (
+            { dishes.filter((dish) => (dish.category == 'Refeição')).length > 0 && (
             <div>
-            <h2> Entradas </h2>
+            <h2> Refeições </h2>
             <div className='box-dishes'>
             <AnimateOnScroll>
-            {(dishes.filter(dish => dish.category == 'Entrada')).map( (dish) => (
+            {(dishes.filter(dish => dish.category == 'Refeição')).map( (dish) => (
               <DishAdmin 
                 key={String(dish.id)}
                 image={`${api.defaults.baseURL}/files/${dish.avatar}`}

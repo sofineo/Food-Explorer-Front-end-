@@ -204,8 +204,7 @@ export function EditDish() {
                 value={category}
                 required
                 >
-                  <option value="Entrada">Entrada</option>
-                  <option value="Prato principal">Prato principal</option>
+                  <option value="Refeição">Refeição</option>
                   <option value="Sobremesa">Sobremesa</option>
                   <option value="Bebida">Bebida</option>
                 </select>

@@ -201,7 +201,7 @@ export function NewDish() {
               required
               >
                 <option value="">Selecione uma opção</option>
-                <option value="Entrada">Entrada</option>
+                <option value="Refeição">Refeição</option>
                 <option value="Sobremesa">Sobremesa</option>
                 <option value="Bebida">Bebida</option>
               </select>
