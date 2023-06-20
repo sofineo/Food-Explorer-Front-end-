@@ -8,8 +8,10 @@
 ![image](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 ## Sobre o projeto
+[![image](https://img.shields.io/badge/Github-backend-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sofineo/Food-Explorer-back-end-)
 
 https://foodexplorerapp.netlify.app  
+
 
 Food Explorer é uma aplicação full stack web e mobile construída como desafio final para certificação do **Explorer**, curso de formação para iniciar no mercado de programação pela [RockeatSeat](https://rocketseat.com/explorer "Site da RockeatSeat").
 
