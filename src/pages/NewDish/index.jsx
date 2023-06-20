@@ -99,9 +99,6 @@ export function NewDish() {
       return alert('Digite a descrição')
     }
     if(!avatar) {
-      // const confirm = window.confirm('Você não enviou uma foto para o prato, tem certeza que deseja criar mesmo assim? Você poderá editar posteriormente')
-
-      // if (!confirm) return
       return alert('Selecione uma imagem para o prato.')
     }
 
@@ -205,7 +202,6 @@ export function NewDish() {
               >
                 <option value="">Selecione uma opção</option>
                 <option value="Entrada">Entrada</option>
-                <option value="Prato principal">Prato principal</option>
                 <option value="Sobremesa">Sobremesa</option>
                 <option value="Bebida">Bebida</option>
               </select>

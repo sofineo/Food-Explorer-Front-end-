@@ -12,15 +12,6 @@ export const Container = styled.div`
     width: max-content;
   }
 
-  /* .horizontal-scroll {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    transition: 0.5 all ease-out;
-  } */
-
   @media (min-width: 850px) {
     
   .dishes {

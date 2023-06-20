@@ -89,27 +89,6 @@ export function HomeAdmin() {
             </AnimateOnScroll>
             </div>
             </div>)}
-            { dishes.filter((dish) => (dish.category == 'Prato principal')).length > 0 && (
-            <div>
-            <h2> Prato principal </h2>
-            <div className='box-dishes'>
-            <AnimateOnScroll>
-            {(dishes.filter(dish => dish.category == 'Prato principal')).map( (dish) => (
-              <DishAdmin 
-                key={String(dish.id)}
-                image={`${api.defaults.baseURL}/files/${dish.avatar}`}
-                title={dish.name} 
-                dishDescription={dish.description}
-                priceTag={dish.price}
-                icon={FiChevronRight}
-                onClickDish={() => handleClickOnDish(dish.id)}
-                onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
-              />
-              ))
-            }
-            </AnimateOnScroll>
-            </div>
-            </div>)}
             { dishes.filter((dish) => (dish.category == 'Sobremesa')).length > 0 && (
              <div>
              <h2> Sobremesas </h2>
