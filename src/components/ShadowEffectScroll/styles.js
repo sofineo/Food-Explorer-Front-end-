@@ -15,10 +15,11 @@ export const Container = styled.div`
   left: ${({ left }) => left ? `0` : ''};
   right: ${({ right }) => right ? `0` : ''};
   
-  padding-left: 24px;
+  filter: opacity(0.9);
+    
+  padding-left: 23px;
 
-
-  .btn-scroll  {
+  .shadow  {
     pointer-events: unset;
     width: 100%;
     height: inherit;

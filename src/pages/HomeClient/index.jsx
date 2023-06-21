@@ -82,7 +82,6 @@ export function HomeClient({ newOrderPlaced }) {
                 onClickDish={() => handleClickOnDish(dish.id)}
                 onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
               />
-              
               ))
             }
             </AnimateOnScroll>

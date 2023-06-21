@@ -1,7 +1,7 @@
-import { Container } from './styles'
+import { Container, DishesItems } from './styles'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect, useRef } from 'react'
-import { BtnScroll } from '../../components/BtnScroll'
+import { ShadowEffectScroll } from '../ShadowEffectScroll'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 
 
@@ -13,6 +13,16 @@ export function AnimateOnScroll({ children, sendScrollEffectValue,...rest }) {
   const [showScrollEffect, setShowScrollEffect] = useState(false)
   const divRef = useRef(null)
 
+  function slideLeft() {
+    const slider = divRef.current;
+    slider.scrollLeft = slider.scrollLeft - 250;
+  };
+
+  function slideRight() {
+    const slider = divRef.current;
+    slider.scrollLeft = slider.scrollLeft + 250;
+  };
+
   useEffect(() => {
     const divElement = divRef.current
 
@@ -22,32 +32,32 @@ export function AnimateOnScroll({ children, sendScrollEffectValue,...rest }) {
   }, [showScrollEffect])
 
   return (
-    <div>
+    <Container>
       <div>
-      <BtnScroll 
+      <ShadowEffectScroll 
       left
-      classNameBtn={`btn-scroll btn-scroll-left ${showScrollEffect ? 'scroll-visible' : 'hide'}`}
+      className={`shadow ${showScrollEffect ? '' : 'hide'}`}
       icon={FiChevronLeft}
-      overflowed={`${showScrollEffect ? true : false}`}
       />
-      <BtnScroll 
+      <ShadowEffectScroll 
       right
-      classNameBtn={`btn-scroll btn-scroll-right ${showScrollEffect ? 'scroll-visible' : 'hide'}`}
+      className={`shadow  ${showScrollEffect ? '' : 'hide'}`}
       icon={FiChevronRight} 
-      overflowed={`${showScrollEffect ? true : false}`}
       />
-      </div>
-    <Container 
-    ref={divRef}
-    className={`dishes-section ${showScrollEffect ? 'scroll-visible' : ''}`}
-    {...rest}>
-      <div
-      ref={refAnimation} 
-      className={`dishes ${inView ? 'animate' : ''}`}
-      >
-        {children}
-      </div>
+      </div >
+      <div className={`icon left ${showScrollEffect ? '' : 'hide'}`}><FiChevronLeft onClick={slideLeft}/></div>
+      <DishesItems 
+      ref={divRef}
+      className={`dishes-section ${showScrollEffect ? '' : ''}`}
+      {...rest}>
+        <div
+        ref={refAnimation} 
+        className={`dishes ${inView ? 'animate' : ''}`}
+        >
+          {children}
+        </div>
+      </DishesItems>
+      <div className={`icon right ${showScrollEffect ? '' : 'hide'}`}><FiChevronRight onClick={slideRight}/></div>
     </Container>
-    </div>
   )
 }

@@ -91,24 +91,10 @@ overflow-x: hidden;
     overflow-x: scroll;
     overflow-y: none;
     overscroll-behavior-inline: contain;
-//     ::-webkit-scrollbar {
-//       display: none;
-//     }
-
-    ::-webkit-scrollbar {
-      height: .8rem;
-    }
-
-    ::-webkit-scrollbar-thumb {
-    height: .8rem;
-    background: ${({ theme }) => theme.COLORS_DARK.DARK_900};
-    border-radius: 1rem;
-    }
-
-    ::-webkit-scrollbar-track {
-    border: 4px solid transparent;
-    border-radius: 1rem;
-    }
+    scroll-behavior: smooth;
+     ::-webkit-scrollbar {
+       display: none;
+     }
   }
 
   .dishes-section:nth-child(odd) .animate {

@@ -3,7 +3,6 @@ import { HeaderAdmin } from '../../components/HeaderAdmin'
 import { Footer } from '../../components/Footer'
 import { AnimateOnScroll } from '../../components/AnimateOnScroll'
 import { DishAdmin } from '../../components/DishAdmin'
-import { BtnScroll } from '../../components/BtnScroll'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { useState, useEffect, useRef } from 'react'
 import { api } from '../../services/api'
@@ -33,10 +32,6 @@ export function HomeAdmin() {
 
    function handleClickOnButtonEdit(id) {
     navigate(`/details/${id}/edit`)
-   }
-
-   function scrollHorizontally() {
-
    }
 
    useEffect(() => {
