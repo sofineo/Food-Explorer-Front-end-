@@ -20,6 +20,7 @@ svg {
 
 :hover {
   color: ${({ theme }) => theme.COLORS_TINTS.CAKE_100};
+  cursor: pointer;
   svg {
     color: ${({ theme }) => theme.COLORS_TINTS.CAKE_100};
   }

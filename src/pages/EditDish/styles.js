@@ -85,6 +85,10 @@ width: 100%;
       outline: #FFFFFF 0.5px solid;
     }
 
+    select:hover {
+      cursor: pointer;
+    }
+
     .select-svg {
       position: absolute;
       right: 12px;
@@ -263,7 +267,12 @@ label {
         height: 24px;
         width: 24px;
       }
+
     }
+}
+
+label:hover {
+        cursor: pointer;
 }
   
 input {
