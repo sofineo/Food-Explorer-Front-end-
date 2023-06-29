@@ -157,6 +157,10 @@ grid-area: 'header';
     display: flex;
   }
 
+  .favorite-button {
+    display: unset;
+  }
+
   .favorite-button:hover {
     color: ${({ theme }) => theme.COLORS_TINTS.TOMATO_400};
     filter: brightness(1.5);
