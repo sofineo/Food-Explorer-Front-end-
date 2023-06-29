@@ -42,6 +42,11 @@ export const Container = styled.div`
     }
   }
 
+  span {
+    display: inline-flex;
+    align-self: center;
+  }
+
   img {
     width: 88px;
     height: 88px;

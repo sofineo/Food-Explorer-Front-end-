@@ -13,8 +13,8 @@ export function DishAdmin({ icon: Icon, title, priceTag, dishDescription, image,
         <img src={image} alt={`Imagem de ${title}`} />
         <h3>{title} {Icon && <Icon size={14} />} </h3>
         <p className='description'>{dishDescription}</p>
-        <span>{`R$ ${priceTag}`}</span>
       </div>
+        <span>{`R$ ${priceTag}`}</span>
     </Container>
   )
 }

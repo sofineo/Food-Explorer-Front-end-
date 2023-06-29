@@ -41,9 +41,8 @@ export function DishClient({ icon: Icon, title, priceTag, dishDescription, image
         <img src={image} alt={`Imagem de ${title}`} />
         <h3>{title} {Icon && <Icon size={14} />} </h3>
         <p className='description'>{dishDescription}</p>
-        <span>{`R$ ${priceTag}`}</span>
-
         </div>
+        <span>{`R$ ${priceTag}`}</span>
         <div className="bts-wrapper">
           <div className="bts-add-remove">
             <button className="minus" onClick={handleMinusButton}>
