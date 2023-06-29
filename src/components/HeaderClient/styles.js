@@ -112,7 +112,7 @@ grid-area: 'header';
   display: none;
 }
 
-.new-dish {
+.favorite-button {
   display: none;
 }
 
