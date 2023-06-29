@@ -8,6 +8,7 @@ import { EditDish } from '../pages/EditDish'
 import { DetailsAdmin } from '../pages/DetailsAdmin'
 import jwt_decode from 'jwt-decode'
 import { DetailsClient } from '../pages/DetailsClient'
+import { Favorites } from '../pages/Favorites'
 
 export function AppRoutes() {
   const { token } = useAuth()
@@ -21,6 +22,7 @@ export function AppRoutes() {
       {admin ? <Route path='/new' element={<NewDish/>}/> : <Route path='/new' element={<Error404/>}/>}
       {admin ? <Route path='/details/:id' element={<DetailsAdmin/>}/> : <Route path='/details/:id' element={<DetailsClient/>}/>}
       {admin ? <Route path='/details/:id/edit' element={<EditDish/>}/> : <Route path='/details/:id/edit' element={<Error404/>}/>}
+      {admin ? <Route path='/favorites' element={<Error404/>}/> : <Route path='/favorites' element={<Favorites/>}/>}
     </Routes>
   )
 }

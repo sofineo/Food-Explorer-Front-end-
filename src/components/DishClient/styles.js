@@ -14,7 +14,6 @@ export const Container = styled.div`
   align-items: center;
 
 
-
   .favorite {
     background: none;
     border: none;
@@ -27,6 +26,10 @@ export const Container = styled.div`
     :hover {
       color: ${({ theme }) => theme.COLORS_TINTS.CAKE_100};
     }
+  }
+
+  .favorite.active {
+    color: ${({ theme }) => theme.COLORS_TINTS.CAKE_100};
   }
 
   .dish-details {

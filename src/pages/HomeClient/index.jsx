@@ -18,6 +18,7 @@ export function HomeClient({ newOrderPlaced }) {
    const queryParams = new URLSearchParams(location.search);
    const query = queryParams.get('q');
    const [dishes, setDishes] = useState([])
+   const [favorites, setFavorites] = useState([])
    const [search, setSearch] = useState('')
    const [totalOrder, setTotalOrder] = useState(0)
    const [order, setOrder] = useState(0)
@@ -31,7 +32,17 @@ export function HomeClient({ newOrderPlaced }) {
     navigate(`/details/${id}`)
    }
 
-   function handleClickOnButtonFavorite(id) {
+   async function handleClickOnButtonFavorite(id) {
+    const alreadyFavorite = favorites.includes(id)
+  
+    if(alreadyFavorite){
+      const filteredFavorites = favorites.filter(favorite => favorite !== id)
+      await api.delete(`/favorite/${id}`)
+      setFavorites(filteredFavorites)
+    } else {
+      setFavorites(prevState => [...prevState, id])
+      await api.post(`/favorite/${id}`)
+    }
    }
 
    useEffect(() => {
@@ -42,6 +53,17 @@ export function HomeClient({ newOrderPlaced }) {
 
     fetchDishes()
   }, [search])
+
+  useEffect(() => {
+    async function fetchFavorites() {
+      const response = await api.get(`/favorite`)
+      const favoriteList = response.data.map( favorite => favorite.id )
+      setFavorites(favoriteList)
+    }
+
+    fetchFavorites()
+
+  }, [])
 
   useEffect(() => {
     if(query) {
@@ -80,7 +102,8 @@ export function HomeClient({ newOrderPlaced }) {
                 priceTag={dish.price}
                 icon={FiChevronRight}
                 onClickDish={() => handleClickOnDish(dish.id)}
-                onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
+                onClickButtonFavorite={() => handleClickOnButtonFavorite(dish.id)}
+                isActive={favorites.includes(dish.id)}
               />
               ))
             }
@@ -101,8 +124,9 @@ export function HomeClient({ newOrderPlaced }) {
                 priceTag={dish.price}
                 icon={FiChevronRight}
                 onClickDish={() => handleClickOnDish(dish.id)}
-                onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
+                onClickButtonFavorite={() => handleClickOnButtonFavorite(dish.id)}
                 newOrderPlaced={order}
+                isActive={favorites.includes(dish.id)}
               />
               ))
             }
@@ -123,8 +147,9 @@ export function HomeClient({ newOrderPlaced }) {
                 dishDescription={dish.description}
                 icon={FiChevronRight}
                 onClickDish={() => handleClickOnDish(dish.id)}
-                onClickButtonEdit={() => handleClickOnButtonEdit(dish.id)}
+                onClickButtonFavorite={() => handleClickOnButtonFavorite(dish.id)}
                 newOrderPlaced={order}
+                isActive={favorites.includes(dish.id)}
               />
               ))
             }

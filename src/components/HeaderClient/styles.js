@@ -62,6 +62,10 @@ grid-area: 'header';
     font-weight: bold;
     color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .orders {
@@ -151,6 +155,11 @@ grid-area: 'header';
 
   .search-bar {
     display: flex;
+  }
+
+  .favorite-button:hover {
+    color: ${({ theme }) => theme.COLORS_TINTS.TOMATO_400};
+    filter: brightness(1.5);
   }
 
   .orders {

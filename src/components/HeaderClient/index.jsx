@@ -1,5 +1,5 @@
 import { Container, MenuMobile, Header } from './styles'
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch, FiHeart } from 'react-icons/fi'
 import { Input } from '../Input'
 import { useNavigate } from 'react-router'
 import { useAuth } from '../../hooks/auth' 
@@ -34,6 +34,10 @@ export function HeaderClient({ sendSearchValue, newOrderPlacedFromDetails}) {
   function handleButtonSignOut() {
     navigate('/')
     signOut()
+  }
+  
+  function handleButtonFavorite() {
+    navigate('/favorites')
   }
 
   function handleToggleMenu() {
@@ -104,6 +108,8 @@ export function HeaderClient({ sendSearchValue, newOrderPlacedFromDetails}) {
         value={search}
         />
 
+      <FiHeart size={30} className='favorite-button' onClick={handleButtonFavorite}/>
+
       <button 
       className="orders"
       >
@@ -150,6 +156,13 @@ export function HeaderClient({ sendSearchValue, newOrderPlacedFromDetails}) {
                 onKeyPress={handleSearchEnter}
                 value={search}
               />
+            </li>
+            <li>
+            <button 
+              className='txt-btn sign-out' 
+              onClick={handleButtonFavorite}>
+              Favoritos 
+            </button>
             </li>
             <li>
             <button 
