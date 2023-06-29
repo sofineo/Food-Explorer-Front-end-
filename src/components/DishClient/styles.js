@@ -40,6 +40,7 @@ export const Container = styled.div`
     justify-content: center;
     width: 94%;
 
+    margin-bottom: 2px;
     :hover {
       cursor: pointer;
       filter: brightness(1.2);
