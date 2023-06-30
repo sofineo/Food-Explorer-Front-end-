@@ -93,6 +93,7 @@ export const Container = styled.div`
       background: none;
       border: none;
       color: ${({ theme }) => theme.COLORS_LIGHT.LIGHT_100};
+      height: 20px;
     }
   }
 
