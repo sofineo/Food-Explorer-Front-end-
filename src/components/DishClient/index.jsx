@@ -6,24 +6,32 @@ import { Container } from './styles'
 export function DishClient({ icon: Icon, title, priceTag, dishDescription, image, onClickButtonFavorite, onClickDish, newOrderPlacedFromDish, isActive, ...rest }) {
   let [total, setTotal] = useState('01')
   const [order, setOrder] = useState(0)
+  const [price, setPrice] = useState('')
 
   function handlePlusButton() {
     const newTotal = (String(Number(total) + 1)).padStart(2, '0')
+    const newPrice = (Number(String(price).replace(',', '.')) + Number(priceTag.replace(',', '.'))).toFixed(2)
     setTotal(newTotal)
+    setPrice(newPrice.replace('.', ','))
   }
 
   function handleMinusButton() {
     const newTotal = (String(Number(total) - 1)).padStart(2, '0')
+    const newPrice = (Number(String(price).replace(',', '.')) - Number(priceTag.replace(',', '.'))).toFixed(2)
     if(Number(newTotal) < 1) {
       return
     }
     setTotal(newTotal)
+    setPrice(newPrice.replace('.', ','))
   }
 
   function handleAddDish() {
     setOrder(prev => prev + Number(total))
   }
 
+  useEffect(() => {
+    setPrice(priceTag)
+  }, [])
   return (
     <Container {...rest} newOrderPlaced={order}>
       <button 
@@ -42,7 +50,7 @@ export function DishClient({ icon: Icon, title, priceTag, dishDescription, image
         <h3>{title} {Icon && <Icon size={14} />} </h3>
         <p className='description'>{dishDescription}</p>
         </div>
-        <span>{`R$ ${priceTag}`}</span>
+        <span>{`R$ ${price}`}</span>
         <div className="bts-wrapper">
           <div className="bts-add-remove">
             <button className="minus" onClick={handleMinusButton}>
