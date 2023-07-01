@@ -45,6 +45,10 @@ grid-area: 'header';
   justify-content: center;
   gap: 8px;
 
+  :hover {
+    cursor: pointer;
+  }
+
   svg {
     height: 25px;
     width: 25px;

@@ -9,6 +9,7 @@ import { Section } from '../../components/Section'
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import { useAuth } from '../../hooks/auth'
+import { toast } from 'react-toastify'
 
 export function NewDish() {
   const [avatar, setAvatar] = useState(null)
@@ -118,8 +119,8 @@ export function NewDish() {
         price,
         description
       })
-
-      alert('Prato criado com sucesso!')
+    
+      toast('Prato criado com sucesso!')
       navigate(-1)
     } else {
       await api.post('/dishes', {
@@ -130,7 +131,7 @@ export function NewDish() {
         description
       })
 
-      alert('Prato criado com sucesso!')
+      toast('Prato criado com sucesso!')
       navigate(-1)
     }
   }

@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { api } from '../services/api'
+import { toast } from 'react-toastify'
+
 
 const AuthContext = createContext({})
 
@@ -18,11 +20,13 @@ function AuthProvider({ children }) {
       api.defaults.headers.common['Authorization'] = `Bear ${token}`
   
       setData({ user, token })
+
+      toast(`Bem-vindo(a) ${user.name}`)
     } catch (error) {
       if(error.response) {
-        alert(error.response.data.message)
+        toast.error(error.response.data.message)
       } else {
-        alert('Não foi possível entrar')
+        toast.error('Não foi possível entrar')
       }
     }
 

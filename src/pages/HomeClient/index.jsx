@@ -12,7 +12,6 @@ import imageDesktop from '../../assets/ImageHomeDesktop.png'
 import { useLocation } from 'react-router-dom'
 
 
-
 export function HomeClient({ newOrderPlaced }) {
    const location = useLocation();
    const queryParams = new URLSearchParams(location.search);

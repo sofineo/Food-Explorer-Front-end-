@@ -2,6 +2,7 @@ import { Container } from './styles'
 import { useState } from 'react'
 import { api } from '../../services/api'
 import { useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
 
 export function SignUp() {
   const [name, setName] = useState('')
@@ -12,24 +13,24 @@ export function SignUp() {
 
   function handleSignUp() {
     if(!name || !email || !password) {
-      return alert('Preencha todos os campos.')
+      return toast.warn('Preencha todos os campos.')
     }
 
     if (password.length < 6) {
-      return alert("Senha precisa ter mínimo de 6 caracteres");
+      return toast.warn("Senha precisa ter mínimo de 6 caracteres");
     }
   
     api.post('/users', { name, email, password })
     .then((response) => {
       console.log(response)
-      alert('Usuário cadastrado com sucesso!')
+      toast.success('Usuário cadastrado com sucesso!')
       navigate('/')
     })
     .catch(error => {
       if(error.response) {
-        alert(error.response.data.message)
+        toast.error(error.response.data.message)
       } else {
-        alert('Não foi possível cadastrar este usuário.')
+        toast.error('Não foi possível cadastrar este usuário.')
       }
     })
   }

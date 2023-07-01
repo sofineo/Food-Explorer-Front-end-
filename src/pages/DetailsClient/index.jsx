@@ -6,6 +6,7 @@ import { Footer } from '../../components/Footer'
 import { useNavigate, useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
+import { toast } from 'react-toastify';
 
 export function DetailsClient() {
   const params = useParams()
@@ -48,7 +49,7 @@ export function DetailsClient() {
   function handleAddDish() {
     setNewOrder(Number(total))
     console.dir(Number(total))
-    Number(total) == 1 ? alert(`${Number(total)}x"${data.name}" foi adicionado aos pedidos.`) : alert(`${Number(total)}x"${data.name}" foram adicionados aos pedidos.`)
+    Number(total) == 1 ? toast(`${Number(total)}x item foi adicionado aos pedidos.`) : toast(`${Number(total)}x itens foram adicionados aos pedidos.`)
     navigate('/')
   }
   useEffect(() => {

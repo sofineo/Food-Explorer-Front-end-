@@ -31,6 +31,10 @@ export function HeaderClient({ sendSearchValue, newOrderPlacedFromDetails}) {
     }
   }
 
+  function handleHome() {
+    navigate('/')
+  }
+
   function handleButtonSignOut() {
     navigate('/')
     signOut()
@@ -74,7 +78,7 @@ export function HeaderClient({ sendSearchValue, newOrderPlacedFromDetails}) {
         </svg>
       </button>
 
-      <div className="logo">
+      <div className="logo" onClick={handleHome}>
         <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_96_6316)">
             <path d="M23.6574 0L42.4133 10.8287V32.4862L23.6574 43.3149L4.90155 32.4862V10.8287L23.6574 0Z" fill="currentColor"/>

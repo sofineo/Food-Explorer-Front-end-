@@ -139,7 +139,6 @@ grid-area: 'header';
     position: relative;
     max-width: 197px;
     height: 48PX;
-    align-items: initial;
     gap: 10px;
 
     .logotext {
@@ -151,6 +150,10 @@ grid-area: 'header';
         text-align: end;
       }
     }
+
+    :hover {
+    cursor: pointer;
+  }
   }
 
   .search-bar {

@@ -8,6 +8,7 @@ import { IngredientItem } from '../../components/IngredientItem'
 import { Section } from '../../components/Section'
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
+import { toast } from 'react-toastify'
 
 export function EditDish() {
   const params = useParams()
@@ -72,7 +73,7 @@ export function EditDish() {
     const confirm = window.confirm('Deseja realmente excluir este prato?')
     if(confirm) {
       api.delete(`/dishes/${params.id}`)
-      alert('Prato excluído com sucesso')
+      toast('Prato excluído com sucesso')
       navigate(-1)
     }
   }
@@ -119,7 +120,7 @@ export function EditDish() {
         description
       })
 
-    alert('Prato editado com sucesso!')
+    toast('Prato editado com sucesso!')
     navigate(-1)
   
   }
